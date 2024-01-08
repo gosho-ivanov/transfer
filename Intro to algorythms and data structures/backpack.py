@@ -10,10 +10,8 @@ for i in range(n):
 
 permutations_items = permutations(items_weight)
 
-
 for perm in permutations_items:
     m = backpack
-    perm = list(perm)
     index = 0
     data = {}
     while index < len(perm) and m > 0:
@@ -33,9 +31,7 @@ for variant in statistics:
         if total == backpack:
             filled_backpack.append(variant)
 
-print()
 for variant in filled_backpack:
-    print(f"The following variant fills the backpack succesfully:")
+    print(f"\nThe following variant fills the backpack succesfully:")
     for key in variant:
         print(f"{key} kg item: {variant[key]} times")
-    print()

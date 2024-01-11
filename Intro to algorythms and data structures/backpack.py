@@ -9,7 +9,7 @@ for i in range(n):
     items_weight.append(int(input("Enter the weight of the current item (between 2 and 9 kgs): ")))
 
 permutations_items = list(permutations(items_weight))
-valid_permutations = []
+valid_permutations = 0
 
 for perm in permutations_items:
     m = backpack
@@ -22,14 +22,10 @@ for perm in permutations_items:
             m -= fitting_items*perm[index]
         index+=1
     if m == 0:
-        statistics.append(data)
-        valid_permutations.append(perm)
+        valid_permutations+=1
+        print(f"\nThe following variant fills the backpack succesfully:\n"
+              f"Permutation: {perm}")
+        for key in data.keys():
+            print(f"{key} kg item: {data[key]} times")
 
-for i in range(len(statistics)):
-    print(f"\nThe following variant fills the backpack succesfully:\n"
-          f"Permutation: {valid_permutations[i]}")
-    for key in statistics[i].keys():
-        print(f"{key} kg item: {statistics[i][key]} times")
-
-
-print(f"\n{len(permutations_items)} permutations were created and only {len(statistics)} filled the backpack succesfully.")
+print(f"\n{len(permutations_items)} permutations were created and only {valid_permutations} filled the backpack succesfully.")

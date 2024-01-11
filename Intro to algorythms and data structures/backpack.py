@@ -3,7 +3,6 @@ from itertools import permutations
 backpack = int(input("Enter the weight that the backpack has: "))
 n = int(input("Enter the number of possible items (between 2 and 5): "))
 items_weight = []
-statistics = []
 
 for i in range(n):
     items_weight.append(int(input("Enter the weight of the current item (between 2 and 9 kgs): ")))

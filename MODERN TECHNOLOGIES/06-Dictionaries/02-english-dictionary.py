@@ -9,5 +9,5 @@ while word!="":
         dictionary[word].append(meanings)
     word = input()
 
-for key, values in dictionary.items():
-    print(f"{key} - {(", ").join(values)}")
+for word, meanings in dictionary.items():
+    print(f"{word} - {(", ").join(meanings)}")

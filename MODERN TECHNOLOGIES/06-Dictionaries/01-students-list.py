@@ -4,5 +4,5 @@ students = {}
 for i in range(1, num_of_students+1):
     students[i] = input()
 
-for key, value in students.items():
-    print(f"{key}: {value}")
+for id, name in students.items():
+    print(f"{id}: {name}")

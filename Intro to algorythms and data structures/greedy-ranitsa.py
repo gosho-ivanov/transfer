@@ -3,10 +3,13 @@ from itertools import permutations
 M = int(input("Input backpack capacity in kilograms: "))
 N = int(input("Input  number of subjects in the interval from 2 to 5: "))
 G = []
+
 for i in range(N):
     G.append(int(input(f"Input weight of subject {i+1} which cannot be less than 2 kilograms: ")))
+
 STAT = [0] * N
 PERMUTATIONS = permutations(G)
+
 for Perm in PERMUTATIONS:
     print(Perm)
     m = M

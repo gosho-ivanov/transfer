@@ -8,4 +8,5 @@ while "->" in course:
     courses[data[0]] += int(data[1])
     course = input()
 
-print(f"{course} - {courses[course]}")
+if course in courses.keys():
+    print(f"{course} - {courses[course]}")

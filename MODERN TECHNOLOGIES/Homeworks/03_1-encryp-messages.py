@@ -2,13 +2,13 @@ original_message = input()
 original_message = original_message.replace("and", "&").replace("or", "|")
 
 new_message = ""
-vowels = {"a":"0", "e":"1", "i":"2", "o":"3", "u":"4"}
+vowels = ["a", 'e', 'i', 'o', 'u']
 intervals = ["#", "$", "%"]
 interval = 0
 
 for char in original_message:
-    if char in vowels.keys():
-        new_message += vowels[char]
+    if char in vowels:
+        new_message += str(vowels.index(char))
     elif char.isalpha():
         new_message += chr(ord(char)-2)
     elif char.isdigit():

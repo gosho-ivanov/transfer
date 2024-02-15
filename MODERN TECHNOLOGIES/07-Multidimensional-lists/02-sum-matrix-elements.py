@@ -1,5 +1,4 @@
-row, col = input().split(", ")
-row, col = int(row), int(col)
+row, col = [int(x) for x in input().split()]
 
 sum_elements = 0
 matrix = []

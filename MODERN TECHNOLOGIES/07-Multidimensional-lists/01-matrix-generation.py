@@ -1,7 +1,7 @@
 matrix = []
-for i in range(4):
+for _ in range(4):
     a = []
-    for j in range(5):
+    for _ in range(5):
         a.append(0)
     matrix.append(a)
 

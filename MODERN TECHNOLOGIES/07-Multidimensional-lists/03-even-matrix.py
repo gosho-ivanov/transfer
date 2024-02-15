@@ -1,7 +1,7 @@
 row = int(input())
 
 matrix = []
-for i in range(row):
+for _ in range(row):
     a=[]
     els = input().split(", ")
     for el in els:

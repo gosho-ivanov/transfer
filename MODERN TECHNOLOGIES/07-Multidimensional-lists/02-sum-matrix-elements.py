@@ -2,7 +2,7 @@ row, col = [int(x) for x in input().split()]
 
 sum_elements = 0
 matrix = []
-for i in range(row):
+for _ in range(row):
     a = []
     row_input = input().split(", ")
     for j in range(col):

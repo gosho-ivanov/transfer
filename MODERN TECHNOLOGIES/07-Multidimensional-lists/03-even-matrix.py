@@ -6,7 +6,7 @@ for _ in range(row):
     els = input().split(", ")
     for el in els:
         if int(el) %2 == 0:
-            a.append(el)
+            a.append(int(el))
     matrix.append(a)
 
 print(matrix)

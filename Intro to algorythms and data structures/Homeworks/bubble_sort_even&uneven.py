@@ -34,7 +34,7 @@ def main():
     even_arr, odd_arr = split_even_uneven(my_arr)
     print(f"\nEven numbers: {even_arr}\nOdd numbers: {odd_arr}")
     even_arr, uneven_arr = bubble_sort_ascending(even_arr), bubble_sor_descending(odd_arr)
-    print(f"\nSorted even list: {even_arr}\nSorted odd listL: {uneven_arr}")
+    print(f"\nSorted even listin ascending order: {even_arr}\nSorted odd list in descending oreder: {uneven_arr}")
 
 
 if "__main__" == main():

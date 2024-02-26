@@ -1,5 +1,7 @@
 package Homework_01;
 
+import java.util.Scanner;
+
 public class Book {
     private String author;
     private String bookName;
@@ -7,8 +9,22 @@ public class Book {
     private int pageCount;
     private String review;
 
+    Scanner s = new Scanner(System.in);
+
+    public Book(){}
+
+    public Book(String newBookName, String AuthorName, int pages){
+        this.bookName = newBookName;
+        this.author = AuthorName;
+        this.pageCount = pages;
+    }
+
+
     public void setAuthor(String authorName){
         this.author = authorName;
+    }
+    public void setAuthor(){
+        this.author = s.next();
     }
     public void setBookName(String newBookName){
         this.bookName = newBookName;

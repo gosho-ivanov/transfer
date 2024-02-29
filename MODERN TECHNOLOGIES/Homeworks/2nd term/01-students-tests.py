@@ -10,6 +10,6 @@ while points != "":
     points = input()
 
 for student, points in class_grades.items():
-    avg_score = ceil(sum(points) / len(points))
+    avg_score = sum(points) / len(points)
     grade = 2 + (avg_score/100 * 4)
-    print(f"{student}: {avg_score} -> {grade:.2f}")
+    print(f"{student}: {ceil(avg_score)} -> {grade:.2f}")

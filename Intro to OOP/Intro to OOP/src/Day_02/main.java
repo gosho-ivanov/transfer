@@ -11,7 +11,7 @@ public class main {
         Fraction fraction02 = new Fraction(s.nextInt());
         System.out.println();
 
-        System.out.print("Enter value fro nominator: ");
+        System.out.print("Enter value for nominator: ");
         int new_nom = s.nextInt();
 
         System.out.print("Enter value for denominator: ");
@@ -20,6 +20,9 @@ public class main {
         Fraction fraction03 = new Fraction(new_nom, new_denom);
 
         fraction01.showFraction();
+        fraction03.showFraction();
         fraction03.showFractionAsDecimal();
+        Fraction fraction04 = fraction03.addFractions(fraction03);
+        fraction04.showFraction();
     }
 }

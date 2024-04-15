@@ -28,13 +28,19 @@ public class Fraction {
     }
 
     public void showFraction(){
-        System.out.println(this.nom + "/" + this.denom);
+        checkNOD(Math.abs(this.nom), Math.abs(this.denom));
+        if (this.nom>0 && this.denom > 0) {
+            System.out.println(this.nom + "/" + this.denom);
+        } else {
+            System.out.println("-"+ Math.abs(this.nom)+"/"+Math.abs(this.denom));
+        }
     }
 
     public void showFractionAsDecimal(){
         double result = (double) this.nom / this.denom;
         System.out.println(result);
     }
+
 
     private int euclidAlgo(int a, int b){
         if (b == 0){
@@ -53,4 +59,16 @@ public class Fraction {
     }
 
 
+    public Fraction addFractions(Fraction fr2){
+        int nom1 = this.nom;
+        int nom2 = fr2.nom;
+
+        int denom1 = this.denom;
+        int denom2 = fr2.denom;
+
+        int new_nom = (nom1*denom2) + (nom2*denom1);
+        int new_denom = denom1*denom2;
+        checkNOD(Math.abs(this.nom), Math.abs(this.denom));
+        return new Fraction(new_nom, new_denom);
+    }
 }

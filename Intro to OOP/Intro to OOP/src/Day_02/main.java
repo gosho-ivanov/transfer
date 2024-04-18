@@ -24,5 +24,7 @@ public class main {
         fraction03.showFractionAsDecimal();
         Fraction fraction04 = fraction03.addFractions(fraction03);
         fraction04.showFraction();
+        Fraction fraction05 = fraction04.substractFraction(fraction03);
+        fraction05.showFractionAsDecimal();
     }
 }

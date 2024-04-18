@@ -25,10 +25,10 @@ public class Fraction {
             new_denom = s.nextInt();
         }
         this.denom = new_denom;
+        checkNOD(this.nom, this.denom);
     }
 
     public void showFraction(){
-        checkNOD(Math.abs(this.nom), Math.abs(this.denom));
         if (this.nom>0 && this.denom > 0) {
             System.out.println(this.nom + "/" + this.denom);
         } else {
@@ -68,7 +68,18 @@ public class Fraction {
 
         int new_nom = (nom1*denom2) + (nom2*denom1);
         int new_denom = denom1*denom2;
-        checkNOD(Math.abs(this.nom), Math.abs(this.denom));
+        return new Fraction(new_nom, new_denom);
+    }
+
+    public Fraction substractFraction(Fraction fr2){
+        int nom1 = this.nom;
+        int nom2 = fr2.nom;
+
+        int denom1 = this.denom;
+        int denom2 = fr2.denom;
+
+        int new_denom = denom1 * denom2;
+        int new_nom = nom1 - nom2;
         return new Fraction(new_nom, new_denom);
     }
 }

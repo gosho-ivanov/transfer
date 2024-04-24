@@ -25,7 +25,7 @@ public class Fraction {
             new_denom = s.nextInt();
         }
         this.denom = new_denom;
-        checkNOD(this.nom, this.denom);
+        checkNOD(Math.abs(this.nom), Math.abs(this.denom));
     }
 
     public void showFraction(){

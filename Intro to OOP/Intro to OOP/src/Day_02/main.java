@@ -19,12 +19,20 @@ public class main {
 
         Fraction fraction03 = new Fraction(new_nom, new_denom);
 
-        fraction01.showFraction();
+        /*fraction01.showFraction();
         fraction03.showFraction();
         fraction03.showFractionAsDecimal();
         Fraction fraction04 = fraction03.addFractions(fraction03);
         fraction04.showFraction();
         Fraction fraction05 = fraction04.substractFraction(fraction03);
         fraction05.showFractionAsDecimal();
+        */
+
+        fraction03.showFraction();
+        Fraction fraction04 = fraction03.reciprocalFraction();
+        fraction04.showFraction();
+
+        Fraction fraction05 = fraction03.fractionPower(4);
+        fraction05.showFraction();
     }
 }

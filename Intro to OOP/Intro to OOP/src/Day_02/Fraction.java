@@ -82,4 +82,24 @@ public class Fraction {
         int new_nom = nom1 - nom2;
         return new Fraction(new_nom, new_denom);
     }
+
+    public Fraction reciprocalFraction(){
+        int temp = this.nom;
+        int nom = this.denom;
+        int denom = temp;
+        return new Fraction(nom, denom);
+    }
+
+    public Fraction fractionPower(int power) {
+        int nom = this.nom;
+        int denom = this.denom;
+        int new_nom = 1;
+        int new_denom = 1;
+        for (int i = 0; i < power; i++) {
+            new_nom *= nom;
+            new_denom *= denom;
+        }
+
+        return new Fraction(new_nom, new_denom);
+    }
 }

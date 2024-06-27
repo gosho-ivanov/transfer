@@ -96,7 +96,7 @@ public class Fraction {
         int new_nom = 1;
         int new_denom = 1;
         for (int i = 0; i < power; i++) {
-            new_nom *= nom;
+            new_nom *= nom; 
             new_denom *= denom;
         }
 

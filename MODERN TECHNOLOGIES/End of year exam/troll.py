@@ -1,21 +1,15 @@
-matrix = []
-row, col = list(map(int, input().split(", ")))
+from collections import deque
 
-for _ in range(row):
-    data = list(map(int, input().split(", ")))
-    matrix.append(data)
+unsorted_sheep = list(map(float, input().split()))
+preggos = deque(map(float, input().split()))
+categorised = []
 
-for i in range(row):
-    for k in range(col):
-        if matrix[i][k] == 0 :
-            matrix[i][k] = 100
-        elif matrix[i][k] % 2 == 0:
-            matrix[i][k] += 2
-        elif matrix[i][k] % 2 == 1:
-            matrix[i][k] += 1
-        else:pass
+for el in unsorted_sheep:
+    if el >= 20:
+        preggos.appendleft(el)
+    else:
+        categorised.append(el)
 
-
-print()
-for data in matrix:
-    print(*data, sep = ", ")
+print(f"Pregnant sheep: {len(preggos)}")
+print(*preggos, sep=", ")
+print(*unsorted_sheep, sep=", ")

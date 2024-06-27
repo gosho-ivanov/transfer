@@ -1,6 +1,6 @@
 import random
 
-hidden_num = random.randint(1, 100)
+hidden_num = 72
 guess = int(input("Въведете число: "))
 
 while guess != hidden_num:

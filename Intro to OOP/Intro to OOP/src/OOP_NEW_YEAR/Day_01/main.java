@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR;
+package OOP_NEW_YEAR.Day_01;
 
 import java.util.Scanner;
 

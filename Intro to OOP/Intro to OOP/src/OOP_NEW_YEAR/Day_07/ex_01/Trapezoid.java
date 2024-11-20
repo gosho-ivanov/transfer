@@ -1,6 +1,6 @@
-package OOP_NEW_YEAR.Day_07;
+package OOP_NEW_YEAR.Day_07.ex_01;
 
-public class Trapezoid extends Figure{
+public class Trapezoid extends Figure {
     private double c;
     private double h;
 

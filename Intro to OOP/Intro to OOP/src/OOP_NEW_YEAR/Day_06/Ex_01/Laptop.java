@@ -1,6 +1,6 @@
-package OOP_NEW_YEAR.Day_06;
+package OOP_NEW_YEAR.Day_06.Ex_01;
 
-public class Laptop extends ElectricalDevice{
+public class Laptop extends ElectricalDevice {
     private int ramCapacity;
     public int storageCapacity;
 
@@ -33,7 +33,7 @@ public class Laptop extends ElectricalDevice{
     }
 
     public String toString(){
-        return "This laptop has a " + this.getCpu() + " cpu;"
+        return "This laptop has a " + this.getCpu() + " CPU;"
                 +  "a " + this.getVoltage() + "V power supply;"
                 + " " + this.getRamCapacity() + "GB of RAM;"
                 + " " + this.getStorageCapacity() + "GB of storage.";

@@ -1,6 +1,6 @@
-package OOP_NEW_YEAR.Day_07;
+package OOP_NEW_YEAR.Day_07.ex_01;
 
-public class Rectangle extends Figure{
+public class Rectangle extends Figure {
     public Rectangle(double a, double b){
         super(a, b);
     }

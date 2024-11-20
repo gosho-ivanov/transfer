@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_07;
+package OOP_NEW_YEAR.Day_07.ex_01;
 
 public class Triangle extends Figure {
     private double c;

@@ -1,6 +1,6 @@
-package OOP_NEW_YEAR.Day_07;
+package OOP_NEW_YEAR.Day_07.ex_01;
 
-public class Parallelogram extends Figure{
+public class Parallelogram extends Figure {
     private double h;
 
     public Parallelogram(double a, double b, double h){

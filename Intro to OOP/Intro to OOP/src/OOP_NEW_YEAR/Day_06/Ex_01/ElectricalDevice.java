@@ -1,8 +1,9 @@
-package OOP_NEW_YEAR.Day_06;
+package OOP_NEW_YEAR.Day_06.Ex_01;
 
 public class ElectricalDevice {
     private int voltage;
     private String cpu;
+    private boolean isON = false;
 
     public ElectricalDevice(){
         this.voltage = 0;
@@ -31,11 +32,21 @@ public class ElectricalDevice {
     }
 
     public void turnOn(){
-        System.out.println("The device has been turned on.");
+        if (!isON) {
+            System.out.println("The device has been turned on.");
+            isON = true;
+        } else {
+            System.out.println("The device was already on.");
+        }
     }
 
     public void turnOff(){
-        System.out.println("The device has been turned off.");
+        if (!isON) {
+            System.out.println("The device was already off.");
+        } else {
+            System.out.println("The device has been turned off..");
+            this.isON = false;
+        }
     }
 }
 

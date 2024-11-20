@@ -1,6 +1,6 @@
-package OOP_NEW_YEAR.Day_07;
+package OOP_NEW_YEAR.Day_07.ex_01;
 
-public class Square extends Figure{
+public class Square extends Figure {
     public Square(double a){
         super(a, a);
     }

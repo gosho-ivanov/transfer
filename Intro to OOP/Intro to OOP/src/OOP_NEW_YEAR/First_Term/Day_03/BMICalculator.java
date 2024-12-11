@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_03;
+package OOP_NEW_YEAR.First_Term.Day_03;
 
 import java.util.Scanner;
 

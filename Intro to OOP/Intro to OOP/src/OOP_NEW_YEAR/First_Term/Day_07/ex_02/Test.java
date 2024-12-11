@@ -1,6 +1,4 @@
-package OOP_NEW_YEAR.Day_07.ex_02;
-
-import java.util.Scanner;
+package OOP_NEW_YEAR.First_Term.Day_07.ex_02;
 
 public class Test {
     public static void main(String[] args) {

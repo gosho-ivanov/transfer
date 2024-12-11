@@ -1,4 +1,4 @@
-package lecture.Store;
+package OOP_NEW_YEAR.Tomov_Lectures.Store;
 
 public class Product {
     private int stock;

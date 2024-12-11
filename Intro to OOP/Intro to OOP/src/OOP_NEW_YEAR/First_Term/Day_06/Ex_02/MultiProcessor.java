@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_06.Ex_02;
+package OOP_NEW_YEAR.First_Term.Day_06.Ex_02;
 
 public class MultiProcessor {
     private int processorsAmount;

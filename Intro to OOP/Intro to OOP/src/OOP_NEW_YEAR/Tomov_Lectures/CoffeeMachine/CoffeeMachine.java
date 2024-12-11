@@ -1,6 +1,6 @@
-package lecture.CoffeeMachine;
+package OOP_NEW_YEAR.Tomov_Lectures.CoffeeMachine;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CoffeeMachine {
@@ -13,37 +13,69 @@ public class CoffeeMachine {
     private double MilkAmount;
     private double sugarAmount;
     private double sugarContainerMax;
-    private HashMap<String, String> CoffeeTypeAndProductsAmount;
-    private HashMap<String, Double> CoffeeTypeAndPrice;
-    private HashMap<Double, Integer> ChangeTypeAndAmount;
-    private HashMap<Double, Integer> ChangeTypeAndMaxAmount;
+    private double[] changeCoins;
+    private int[] changeCoinsAmount;
+    private int[] changeCoinsMaxAmount;
     private double CoffeeBeansContainerMax;
     private double WaterTankMax;
     private double MilkTankMax;
+    private ArrayList<Coffee> coffeesAvailable;
     //FIELDS END HERE
 
 
     //CONSTRUCTOR, GETTERS AND SETTERS START HERE
-    public CoffeeMachine(double coffeeAmount, double coffeeBeansContainerMax, HashMap<String, Double> coffeeTypeAndPrice,
-                         double milkAmount, double milkTankMax, double waterAmount, double waterTankMax,
-                         HashMap<Double, Integer> ChangeTypeAndAmount, HashMap<String, String> CoffeeTypeAndProductsAmount,
-                         HashMap<Double, Integer> ChangeTypeAndMaxAmount, double sugarAmount, double sugarContainerMax) {
+
+    public CoffeeMachine(double coffeeAmount, double coffeeBeansContainerMax, double milkAmount, double milkTankMax,
+                         double sugarAmount, double sugarContainerMax, double waterAmount, double waterTankMax, ArrayList<Coffee> coffeesAvailable,
+                         double[] changeCoins, int[] changeCoinsAmount, int[] changeCoinsMaxAmount) {
         this.CoffeeAmount = coffeeAmount;
         this.CoffeeBeansContainerMax = coffeeBeansContainerMax;
-        this.CoffeeTypeAndPrice = coffeeTypeAndPrice;
         this.MilkAmount = milkAmount;
         this.MilkTankMax = milkTankMax;
-        this.WaterAmount = waterAmount;
-        this.WaterTankMax = waterTankMax;
-        this.ChangeTypeAndAmount = ChangeTypeAndAmount;
-        this.CoffeeTypeAndProductsAmount = CoffeeTypeAndProductsAmount;
-        this.ChangeTypeAndMaxAmount = ChangeTypeAndMaxAmount;
         this.sugarAmount = sugarAmount;
         this.sugarContainerMax = sugarContainerMax;
+        this.WaterAmount = waterAmount;
+        this.WaterTankMax = waterTankMax;
+        this.coffeesAvailable = coffeesAvailable;
+        this.changeCoinsAmount = changeCoinsAmount;
+        this.changeCoinsMaxAmount = changeCoinsMaxAmount;
+        this.changeCoins = changeCoins;
+    }
+
+    public double getCoffeeAmount() {
+        return CoffeeAmount;
+    }
+
+    public void setCoffeeAmount(double coffeeAmount) {
+        CoffeeAmount = coffeeAmount;
+    }
+
+    public double getCoffeeBeansContainerMax() {
+        return CoffeeBeansContainerMax;
+    }
+
+    public void setCoffeeBeansContainerMax(double coffeeBeansContainerMax) {
+        CoffeeBeansContainerMax = coffeeBeansContainerMax;
+    }
+
+    public double getMilkAmount() {
+        return MilkAmount;
+    }
+
+    public void setMilkAmount(double milkAmount) {
+        MilkAmount = milkAmount;
+    }
+
+    public double getMilkTankMax() {
+        return MilkTankMax;
+    }
+
+    public void setMilkTankMax(double milkTankMax) {
+        MilkTankMax = milkTankMax;
     }
 
     public double getSugarAmount() {
-        return this.sugarAmount;
+        return sugarAmount;
     }
 
     public void setSugarAmount(double sugarAmount) {
@@ -51,102 +83,78 @@ public class CoffeeMachine {
     }
 
     public double getSugarContainerMax() {
-        return this.sugarContainerMax;
+        return sugarContainerMax;
     }
 
     public void setSugarContainerMax(double sugarContainerMax) {
         this.sugarContainerMax = sugarContainerMax;
     }
 
-    public double getCoffeeAmount() {
-        return this.CoffeeAmount;
-    }
-
-    public void setCoffeeAmount(double coffeeAmount) {
-        this.CoffeeAmount = coffeeAmount;
-    }
-
-    public double getCoffeeBeansContainerMax() {
-        return this.CoffeeBeansContainerMax;
-    }
-
-    public void setCoffeeBeansContainerMax(double coffeeBeansContainerMax) {
-        this.CoffeeBeansContainerMax = coffeeBeansContainerMax;
-    }
-
-    public HashMap<String, Double> getCoffeeTypeAndPrice() {
-        return this.CoffeeTypeAndPrice;
-    }
-
-    public void setCoffeeTypeAndPrice(HashMap<String, Double> coffeeTypeAndPrice) {
-        this.CoffeeTypeAndPrice = coffeeTypeAndPrice;
-    }
-
-    public double getMilkAmount() {
-        return this.MilkAmount;
-    }
-
-    public void setMilkAmount(double milkAmount) {
-        this.MilkAmount = milkAmount;
-    }
-
-    public double getMilkTankMax() {
-        return this.MilkTankMax;
-    }
-
-    public void setMilkTankMax(double milkTankMax) {
-        this.MilkTankMax = milkTankMax;
-    }
-
     public double getWaterAmount() {
-        return this.WaterAmount;
+        return WaterAmount;
     }
 
     public void setWaterAmount(double waterAmount) {
-        this.WaterAmount = waterAmount;
+        WaterAmount = waterAmount;
     }
 
     public double getWaterTankMax() {
-        return this.WaterTankMax;
+        return WaterTankMax;
     }
 
     public void setWaterTankMax(double waterTankMax) {
-        this.WaterTankMax = waterTankMax;
+        WaterTankMax = waterTankMax;
     }
 
-    public HashMap<Double, Integer> getChangeTypeAndAmount() {
-        return this.ChangeTypeAndAmount;
+    public ArrayList<Coffee> getCoffeesAvailable() {
+        return coffeesAvailable;
     }
 
-    public void setChangeTypeAndAmount(HashMap<Double, Integer> changeTypeAndAmount) {
-        this.ChangeTypeAndAmount = changeTypeAndAmount;
+    public void setCoffeesAvailable(ArrayList<Coffee> coffeesAvailable) {
+        this.coffeesAvailable = coffeesAvailable;
     }
 
-    public HashMap<String, String> getCoffeeTypeAndProductsAmount() {
-        return this.CoffeeTypeAndProductsAmount;
+    public double[] getChangeCoins() {
+        return changeCoins;
     }
 
-    public void setCoffeeTypeAndProductsAmount(HashMap<String, String> coffeeTypeAndProductsAmount) {
-        this.CoffeeTypeAndProductsAmount = coffeeTypeAndProductsAmount;
+    public void setChangeCoins(double[] changeCoins) {
+        this.changeCoins = changeCoins;
     }
 
-    public HashMap<Double, Integer> getChangeTypeAndMaxAmount() {
-        return this.ChangeTypeAndMaxAmount;
+    public int[] getChangeCoinsAmount() {
+        return changeCoinsAmount;
     }
 
-    public void setChangeTypeAndMaxAmount(HashMap<Double, Integer> changeTypeAndMaxAmount) {
-        this.ChangeTypeAndMaxAmount = changeTypeAndMaxAmount;
+    public void setChangeCoinsAmount(int[] changeCoinsAmount) {
+        this.changeCoinsAmount = changeCoinsAmount;
+    }
+
+    public void setChangeCoinsAmountByIndex(int index, int amount){
+        this.changeCoinsAmount[index] = amount;
+    }
+
+    public int[] getChangeCoinsMaxAmount() {
+        return changeCoinsMaxAmount;
+    }
+
+    public void setChangeCoinsMaxAmount(int[] changeCoinsMaxAmount) {
+        this.changeCoinsMaxAmount = changeCoinsMaxAmount;
+    }
+
+    public void setChangeCoinsMaxAmountByIndex(int index, int amount){
+        this.changeCoinsMaxAmount[index] = amount;
     }
     //CONSTRUCTOR, GETTERS AND SETTERS END HERE
 
 
 
     //FUNCTIONALITY OF THE COFFEE MACHINE STARTS HERE
-    public void addCoffeeTypeAndPrice(String coffeeType, double price){
-        this.CoffeeTypeAndPrice.put(coffeeType, price);
+    public void addCoffeeToMachine(String name, int coffeeNeeded, int milkNeeded, int waterNeeded, double price){
+        this.coffeesAvailable.add(new Coffee(coffeeNeeded, milkNeeded, name, price, waterNeeded));
     }
 
-    public void addCoffee(double amount) {
+    public void fillCoffeeContainer(double amount) {
         if (this.getCoffeeAmount() + amount <= this.getCoffeeBeansContainerMax()) this.setCoffeeAmount(this.getCoffeeAmount() + amount);
         else {
             System.out.print("The coffee amount would be more than the coffee container can handle. Would you like to fill it the max? [y/n]");
@@ -157,7 +165,7 @@ public class CoffeeMachine {
         }
     }
 
-    public void addWater(double amount){
+    public void fillWaterContainer(double amount){
         if (this.WaterAmount + amount <= this.getWaterTankMax()) this.setWaterAmount(this.getWaterAmount() + amount);
         else {
             System.out.print("The water amount would be more than the tank can handle. Would you like to fill it the max? [y/n]");
@@ -168,7 +176,7 @@ public class CoffeeMachine {
         }
     }
 
-    public void addMilk(double amount){
+    public void fillMilkContainer(double amount){
         if (this.getMilkAmount() + amount <= this.getMilkTankMax()) this.setMilkAmount(this.getMilkAmount() + amount);
         else {
             System.out.print("The milk amount would be more than the tank can handle. Would you like to fill it the max? [y/n]");
@@ -178,7 +186,7 @@ public class CoffeeMachine {
             }
         }
     }
-    public void addSugar(double amount){
+    public void fillSugarContainer(double amount){
         if (this.getSugarAmount() + amount <= this.getSugarContainerMax()) this.setSugarAmount(this.getSugarAmount() + amount);
         else {
             System.out.print("The milk amount would be more than the tank can handle. Would you like to fill it the max? [y/n]");
@@ -189,18 +197,31 @@ public class CoffeeMachine {
         }
     }
 
-    public HashMap<Double, Integer> makeCoffee(double money, String coffeeType){
-        String[] productsNeeded = this.CoffeeTypeAndProductsAmount.get(coffeeType).split(" ");
-        double coffeeNeeded = (double) Integer.parseInt(productsNeeded[0]) / 1000;
-        double waterNeeded = (double) Integer.parseInt(productsNeeded[1]) / 1000;
-        double milkNeeded = (double) Integer.parseInt(productsNeeded[2]) / 1000;
-        useCoffee(coffeeNeeded);
-        useMilk(milkNeeded);
-        useWater(waterNeeded);
-        this.sugarAmount -= addSugarToCoffee();
-        double priceCoffee = this.getCoffeeTypeAndPrice().get(coffeeType);
-        double change = money - priceCoffee;
-        return this.returnChangeInCoins(change);
+    public double[][] makeCoffee(double money, String coffeeType){
+        Coffee coffeeToMake = null;
+        double change;
+        double[][] changeInCoins = new double[2][6];
+
+
+        for (Coffee selectedCoffee : this.getCoffeesAvailable()){
+            if (selectedCoffee.getName().equals(coffeeType)){
+                coffeeToMake = selectedCoffee;
+            }
+        }
+
+        if (coffeeToMake == null){
+            System.out.println("The coffee you have selected does not exist. Try with another one.");
+        } else {
+            useCoffee(coffeeToMake.getCoffeeNeeded());
+            useMilk(coffeeToMake.getMilkNeeded());
+            useWater(coffeeToMake.getWaterNeeded());
+            this.sugarAmount -= addSugarToCoffee();
+            change = money - coffeeToMake.getPrice();
+            changeInCoins = returnChangeInCoins(change);
+        }
+
+        return changeInCoins;
+
     }
 
     private void useCoffee(double amount){
@@ -210,7 +231,7 @@ public class CoffeeMachine {
                                 " Please fill the container.");
             System.out.print("Enter the amount of coffee to be added ot the container: ");
             double addAmount = scanner.nextDouble();
-            this.addCoffee(addAmount);
+            this.fillCoffeeContainer(addAmount);
         }
     }
 
@@ -221,7 +242,7 @@ public class CoffeeMachine {
                     " Please fill the container.");
             System.out.print("Enter the amount of milk to be added ot the tank: ");
             double addAmount = scanner.nextDouble();
-            this.addMilk(addAmount);
+            this.fillMilkContainer(addAmount);
         }
     }
 
@@ -232,43 +253,67 @@ public class CoffeeMachine {
                     " Please fill the container.");
             System.out.print("Enter the amount of water to be added ot the tank: ");
             double addAmount = scanner.nextDouble();
-            this.addWater(addAmount);
+            this.fillWaterContainer(addAmount);
         }
     }
 
-    private HashMap<Double, Integer> returnChangeInCoins(double change){
-        double[] changeCoins = {0.05, 0.10, 0.20, 0.50, 1, 2};
-        //
-        HashMap<Double, Integer> ChangeInCoins = new HashMap<>();
+    private double[][] returnChangeInCoins(double change){
+        double[] changeCoins = this.getChangeCoins();
+        double[] coinsAmount = {0, 0, 0, 0, 0, 0};
+        double[][] changeAndCoinsAmount = {changeCoins, coinsAmount};
         double coin;
-        for (int i = changeCoins.length - 1; i > -1; i--){
-            if (this.getChangeTypeAndAmount().get(changeCoins[i]) > 0) {
-                coin = changeCoins[i];
-                int count = (int) (change / coin);
-                if (count > 0 && this.getChangeTypeAndAmount().get(coin) - count != 0) {
-                    ChangeInCoins.put(coin, count);
-                    change -= count * coin;
-                } else {
-                    ChangeInCoins.put(coin, this.getChangeTypeAndAmount().get(coin));
-                    change -= this.getChangeTypeAndAmount().get(coin) * coin;
-                }
+
+        for (int i = 0; i < changeCoins.length; i++){
+            coin = changeCoins[i];
+            int count = (int) (change / coin);
+
+            if (count > 0 && this.getChangeCoinsAmount()[i] - count != 0) {
+                changeAndCoinsAmount[1][i] = count;
+                this.setChangeCoinsAmountByIndex(i, this.getChangeCoinsAmount()[i] - count);
+                change -= count * coin;
+            } else if (count > 0){
+                changeAndCoinsAmount[1][i] = this.getChangeCoinsAmount()[i];
+                this.setChangeCoinsAmountByIndex(i, 0);
+                change -= this.getChangeCoinsAmount()[i] * coin;
             }
         }
-        return ChangeInCoins;
+
+        return changeAndCoinsAmount;
     }
 
 
     public void checkCoinAvailability(){
         double[] changeCoins = {0.05, 0.10, 0.20, 0.50, 1, 2};
-        for (int i = changeCoins.length - 1; i > -1; i--){
-            if(this.getChangeTypeAndAmount().get(changeCoins[i]) <= 0.2* this.getChangeTypeAndMaxAmount().get(changeCoins[i])){
-                System.out.println("The following coins have low availability: " + this.getChangeTypeAndAmount().get(changeCoins[i]) + " and up.");
+        boolean check = false;
+
+        for (int i = 0; i < changeCoins.length; i++){
+            if(this.getChangeCoinsAmount()[i] <= 0.2 * this.getChangeCoinsMaxAmount()[i]) {
+                System.out.println("The following coins have low availability: " + changeCoins[i] + " and up.");
+                check = true;
+                break;
             }
+        }
+
+        if (!check){
+            System.out.println("There are no coins with particularly low quality.");
         }
     }
 
+
     public void addCoins(double coinType, int amount){
-        this.getChangeTypeAndAmount().replace(coinType, this.getChangeTypeAndAmount().get(coinType) + amount);
+        double[] changeCoins = this.getChangeCoins();
+        double coin;
+        int coinIndex = 0;
+
+        for (int i = 0; i < this.getChangeCoins().length; i++){
+            coin = changeCoins[i];
+
+            if (coin == coinType){
+                coinIndex = i;
+            }
+        }
+
+        this.getChangeCoinsAmount()[coinIndex] += amount;
     }
 
     private static double addSugarToCoffee(){

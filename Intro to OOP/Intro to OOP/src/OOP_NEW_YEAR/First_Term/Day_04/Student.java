@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_04;
+package OOP_NEW_YEAR.First_Term.Day_04;
 
 public class Student extends Person{
     private String fNum;

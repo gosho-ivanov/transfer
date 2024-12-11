@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_05;
+package OOP_NEW_YEAR.First_Term.Day_05;
 
 import java.util.Arrays;
 

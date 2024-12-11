@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_07.ex_02;
+package OOP_NEW_YEAR.First_Term.Day_07.ex_02;
 
 public abstract class Products {
     private double price;

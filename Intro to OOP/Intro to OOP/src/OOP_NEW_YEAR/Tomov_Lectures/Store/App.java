@@ -1,4 +1,4 @@
-package lecture.Store;
+package OOP_NEW_YEAR.Tomov_Lectures.Store;
 
 public class App{
     /*(private static Store store = new Store();

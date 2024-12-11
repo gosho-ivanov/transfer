@@ -1,0 +1,53 @@
+CREATE DATABASE ShoesApplicationDatabase;
+use ShoesApplicationDatabase;
+
+CREATE TABLE Users(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(255) not null,
+    FullName VARCHAR(255) NOT NULL,
+    PhoneNumber VARCHAR(10) NOT NULL,
+    Email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Brands(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(255)
+);
+
+CREATE TABLE Sizes(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    EU INT NOT NULL,
+    US INT NOT NULL,
+    UK INT NOT NULL,
+    CM INT NOT NULL,
+    INCH INT NOT NULL
+);
+
+CREATE TABLE Shoes(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    Model VARCHAR(255) NOT NULL,
+    Price DOUBLE NOT NULL,
+    BrandID INT NOT NULL,
+    
+    FOREIGN KEY(BrandID) REFERENCES Brands(id)
+);
+
+CREATE TABLE Orders(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    ShoeID INT NOT NULL,
+    SizeID INT NOT NULL,
+    UserID INT NOT NULL,
+    
+    FOREIGN KEY(ShoeID) REFERENCES Shoes(id),
+    FOREIGN KEY(SizeID) REFERENCES Sizes(id),
+    FOREIGN KEY(UserID) REFERENCES Users(id)
+);
+
+CREATE TABLE ShoesSizes(
+	ShoeID INT NOT NULL,
+    SizeID INT NOT NULL,
+    
+    FOREIGN KEY(ShoeID) REFERENCES Shoes(id),
+    FOREIGN KEY(SizeID) REFERENCES Sizes(id),
+    PRIMARY KEY(ShoeID, SizeID)
+);

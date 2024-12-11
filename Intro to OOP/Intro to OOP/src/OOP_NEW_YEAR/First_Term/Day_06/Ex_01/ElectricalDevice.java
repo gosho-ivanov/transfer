@@ -1,4 +1,4 @@
-package OOP_NEW_YEAR.Day_06.Ex_01;
+package OOP_NEW_YEAR.First_Term.Day_06.Ex_01;
 
 public class ElectricalDevice {
     private int voltage;

@@ -1,5 +1,4 @@
-package lecture;
-import java.util.Scanner;
+package lecture.Store;
 
 public class App{
     /*(private static Store store = new Store();

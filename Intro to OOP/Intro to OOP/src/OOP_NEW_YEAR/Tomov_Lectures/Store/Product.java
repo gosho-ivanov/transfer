@@ -1,4 +1,4 @@
-package lecture;
+package lecture.Store;
 
 public class Product {
     private int stock;

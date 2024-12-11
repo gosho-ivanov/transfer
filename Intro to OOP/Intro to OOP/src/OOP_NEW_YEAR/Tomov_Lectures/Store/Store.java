@@ -1,4 +1,4 @@
-package lecture;
+package lecture.Store;
 
 import java.util.Scanner;
 

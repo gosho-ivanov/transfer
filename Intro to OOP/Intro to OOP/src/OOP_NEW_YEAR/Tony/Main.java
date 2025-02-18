@@ -1,3 +1,5 @@
+package OOP_NEW_YEAR.Tony;
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Main {
 
             System.out.println("Welcome to the Coffee Machine!");
             System.out.println("1: Make Coffee");
-            System.out.println("2: Check Ingredient Status");
+            System.out.println("2: Check Ingredient Status and Profit");
             System.out.println("3: Refill Ingredients");
             System.out.println("4: Exit");
             System.out.print("Select an option: ");

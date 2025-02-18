@@ -28,6 +28,7 @@ CREATE TABLE Shoes(
     Model VARCHAR(255) NOT NULL,
     Price DOUBLE NOT NULL,
     BrandID INT NOT NULL,
+    Stock INT NOT NULL,
     
     FOREIGN KEY(BrandID) REFERENCES Brands(id)
 );

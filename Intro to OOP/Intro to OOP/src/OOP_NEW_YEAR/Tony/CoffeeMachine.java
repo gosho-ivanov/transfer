@@ -1,3 +1,5 @@
+package OOP_NEW_YEAR.Tony;
+
 import java.util.Scanner;
 
 public class CoffeeMachine {
@@ -41,9 +43,6 @@ public class CoffeeMachine {
         System.out.println("Stirrers: " + stirrerQuantity);
         System.out.println("Sugar: " + sugar + " grams");
         System.out.printf("Money Earned: $%.2f\n", money);
-    }
-
-    private void cleanCoffeeMachine() {
     }
 
     private void extraSugar(){

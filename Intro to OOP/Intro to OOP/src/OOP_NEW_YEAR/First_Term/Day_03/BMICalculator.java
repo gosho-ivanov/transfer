@@ -44,6 +44,6 @@ public class BMICalculator {
     }
 
     public static void ReportResults(int index, float bmi, String status){
-        System.out.printf("Person No. %d has s Body Mass Index of %f, therefore he is %s", index, Math.round(bmi*100)/100 %.2f, status);
+        System.out.printf("Person No. %d has a Body Mass Index of %f, therefore he is %s", index, Math.round(bmi*100)/100 %.2f, status);
     }
 }

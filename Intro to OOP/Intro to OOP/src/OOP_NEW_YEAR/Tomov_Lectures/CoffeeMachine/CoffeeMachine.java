@@ -206,6 +206,7 @@ public class CoffeeMachine {
         for (Coffee selectedCoffee : this.getCoffeesAvailable()){
             if (selectedCoffee.getName().equals(coffeeType)){
                 coffeeToMake = selectedCoffee;
+                break;
             }
         }
 
@@ -267,7 +268,7 @@ public class CoffeeMachine {
             coin = changeCoins[i];
             int count = (int) (change / coin);
 
-            if (count > 0 && this.getChangeCoinsAmount()[i] - count != 0) {
+            if (count > 0 && this.getChangeCoinsAmount()[i] - count > 0) {
                 changeAndCoinsAmount[1][i] = count;
                 this.setChangeCoinsAmountByIndex(i, this.getChangeCoinsAmount()[i] - count);
                 change -= count * coin;
@@ -313,7 +314,7 @@ public class CoffeeMachine {
             }
         }
 
-        this.getChangeCoinsAmount()[coinIndex] += amount;
+        this.setChangeCoinsAmountByIndex(coinIndex, this.getChangeCoinsAmount()[coinIndex] + amount);
     }
 
     private static double addSugarToCoffee(){

@@ -21,10 +21,7 @@ public class IntegerQuestion extends Question{
 
     @Override
     public boolean checkQuestion() {
-        if (studentAnswer == questionAnswer) {
-            return true;
-        } else {
-            return false;
-        }
+        if (studentAnswer == questionAnswer) return true;
+        else return false;
     }
 }

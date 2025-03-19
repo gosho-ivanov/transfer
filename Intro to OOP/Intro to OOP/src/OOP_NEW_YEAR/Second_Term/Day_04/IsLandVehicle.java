@@ -1,6 +1,6 @@
 package OOP_NEW_YEAR.Second_Term.Day_04;
 
-public interface IsLandVechicle {
+public interface IsLandVehicle {
 
     public void enterLand();
 }

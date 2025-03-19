@@ -14,7 +14,7 @@ public abstract class Question {
         return question;
     }
 
-    public void askQuestion(){}
+    public abstract void askQuestion();
 
     public abstract boolean checkQuestion();
 }

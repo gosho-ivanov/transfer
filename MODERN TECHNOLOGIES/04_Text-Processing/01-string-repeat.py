@@ -5,3 +5,4 @@ for word in my_string:
     repeated_string +=word*len(my_string)
 
 print(my_string)
+print(repeated_string)

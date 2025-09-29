@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Georgi Ivanov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Portfolio</div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="education.html">Education & Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contacts.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Contact Me</h1>
+      <p>If you’d like to get in touch, feel free to send me a message using the form below.</p>
+
+      <div class="contact-container">
+        <!-- Contact Form -->
+        <form class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <div class="checkbox">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I agree with the terms and conditions</label>
+          </div>
+
+          <button type="submit">Send</button>
+        </form>
+
+        <!-- Google Maps -->
+        <div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3159.1922239755103!2d23.89931921527147!3d42.89481366275869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa501bf6a08c81%3A0xe4f50f5955f4a188!2z0JLQsdC70YzQu9GMINCk0LDQvdCw0LLQuCwg0JPRgNC10LLQs9C0INGD0LfQsNGPLCDQnNC10LzQtdC90LjRjw!5e0!3m2!1sbg!2sbg!4v1695999999999"
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"></iframe>
+</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Georgi Ivanov. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/gosho-ivanov" target="_blank">GitHub</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+</body>
+</html>

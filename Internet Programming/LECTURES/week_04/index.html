@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="print"></p>
+
+    <script>
+        let firstNumber = 80;
+        let nextNumber = 0.29;
+        let flag = false;
+        let message = "Hello, World!";
+        let name = "Ivan", place = 3;
+        console.log(name + " is at " + place + " place.");
+        document.getElementById('print').innerHTML = `${name} is at ${place}rd place.`;
+
+        let [fName, age, city] = [5, 12, -4];
+        const coordinates = `the coordinates are (${fName}, ${age}, ${city})`;
+        document.getElementById('print').innerHTML += `<br>${coordinates}`;
+    </script>
+</body>
+</html>

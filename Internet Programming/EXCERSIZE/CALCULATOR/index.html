@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Web Calculator</h1>
+
+      <div class="selectors">
+        <label for="themeSelector">Theme:</label>
+        <select id="themeSelector">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="dark-blue">Dark Blue</option>
+          <option value="dark-purple">Dark Purple</option>
+        </select>
+      </div>
+      <div class="selectors mode-line">
+        <label for="modeToggle">Mode:</label>
+        <select id="modeToggle">
+          <option value="normal">Normal</option>
+          <option value="scientific">Scientific</option>
+        </select>
+      </div>
+      <div id="angle-mode">
+        <label for="angleToggle">Angle:</label>
+        <select id="angleToggle">
+          <option value="deg">DEG</option>
+          <option value="rad">RAD</option>
+        </select>
+      </div>
+
+    </header>
+
+    <div class="calculator">
+      <input type="text" id="display" readonly />
+
+      <div id="normal-keys" class="keypad">
+
+        <!-- First row: C, CE, (, ) -->
+        <button class="btn clear-all">C</button>
+        <button class="btn clear">CE</button>
+        <button class="btn">(</button>
+        <button class="btn">)</button>
+
+        <!-- Numbers and operators -->
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn operator">/</button>
+
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn operator">*</button>
+
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn operator">-</button>
+
+        <button class="btn">0</button>
+        <button class="btn">.</button>
+        <button class="btn equal">=</button>
+        <button class="btn operator">+</button>
+
+      </div>
+
+      <div id="scientific-keys" class="keypad hidden">
+        <button class="btn func">sin</button>
+        <button class="btn func">cos</button>
+        <button class="btn func">tan</button>
+        <button class="btn func">log</button>
+
+        <button class="btn func">ln</button>
+        <button class="btn func">√</button>
+        <button class="btn func">x²</button>
+        <button class="btn func">x³</button>
+
+        <button class="btn func">xʸ</button>
+        <button class="btn const">π</button>
+        <button class="btn const">e</button>
+        <button class="btn func">n!</button>
+      </div>
+
+    </div>
+
+    <div id="history-container">
+      <div class="history-header">
+        <h2>History</h2>
+        <button id="clearHistoryBtn" class="btn small">Clear History</button>
+      </div>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

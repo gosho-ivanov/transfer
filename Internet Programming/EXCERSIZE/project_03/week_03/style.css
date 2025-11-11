@@ -1,0 +1,13 @@
+body {
+  background-color: #f8f9fa;
+}
+
+table img {
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+table img:hover {
+  transform: scale(1.1);
+}
+

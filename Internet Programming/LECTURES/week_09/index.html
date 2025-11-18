@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="numbers" style="background-color: red; padding: 10px;"></div>
+    <script>
+        let numbers = [];
+        for (let i = 1; i <= 100; i++) {
+            if (i % 7 ==0){
+            numbers.push(i);
+            }
+        }
+        document.getElementsByClassName("numbers")[0].innerHTML = numbers.join(", ");
+    </script>
+</body>
+</html>

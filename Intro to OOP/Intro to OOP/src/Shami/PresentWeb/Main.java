@@ -6,9 +6,11 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Present[] presents = new Present[10];
+        System.out.print("Enter presents array size: ");
+        int arrSize = scanner.nextInt();
+        Present[] presents = new Present[arrSize];
         Present present = null;
-        for (int i= 0; i < 10; i++) {
+        for (int i= 0; i < presents.length; i++) {
             int id = scanner.nextInt();
             double price = scanner.nextDouble();
             String type = scanner.nextLine();

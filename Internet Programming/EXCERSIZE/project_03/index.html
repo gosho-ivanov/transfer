@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chuck Norris Multi-Joke Generator</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <h1>😂 Chuck Norris Multi-Joke Generator</h1>
-  <div class="controls">
-    <input type="number" id="jokeCount" min="1" max="20" value="3" />
-    <button id="generateBtn">Generate</button>
-  </div>
-
-
-  <div class="status" id="statusText"></div>
-  <div class="jokes" id="jokeContainer"></div>
-  
+  <main class="container">
+    <h1>Product Manager</h1>
+    <div class="controls">
+      <button id="getBtn">Load Products</button>
+      <button id="addBtn">Add Product</button>
+    </div>
+    <table id="productsTable" aria-label="Products table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="productTableBody"></tbody>
+    </table>
+    <div id="status" class="status"></div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('getBtn').addEventListener('click', function () {
+      window.loadProducts();
+    });
+    document.getElementById('addBtn').addEventListener('click', function () {
+      window.open('add.html', 'Add Product', 'width=420,height=620');
+    });
+  </script>
 </body>
-
 </html>

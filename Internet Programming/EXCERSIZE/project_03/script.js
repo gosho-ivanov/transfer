@@ -1,45 +1,97 @@
-const jokeContainer = document.getElementById('jokeContainer');
-const generateBtn = document.getElementById('generateBtn');
-const jokeCountInput = document.getElementById('jokeCount');
-const statusText = document.getElementById('statusText');
+const BASE_URL = 'https://api.escuelajs.co/api/v1/products';
 
-async function getJoke() {
-    const response = await fetch('https://api.chucknorris.io/jokes/random');
-    const data = await response.json();
-    return data.value;
-}
-
-async function generateJokes() {
-    const count = parseInt(jokeCountInput.value);
-    if (isNaN(count) || count < 1) {
-        statusText.textContent = "Please enter a valid number of jokes!";
-        return;
+async function loadProducts() {
+  const status = document.getElementById('status');
+  status.textContent = 'Loading...';
+  const tbody = document.getElementById('productTableBody');
+  tbody.innerHTML = '';
+  try {
+    const res = await fetch(BASE_URL);
+    if (!res.ok) {
+      status.textContent = 'Failed to load products.';
+      return;
     }
-
-    jokeContainer.innerHTML = '';
-    statusText.textContent = `Generating ${count} joke${count > 1 ? 's' : ''}... ⏳`;
-
-    const jokes = [];
-    for (let i = 0; i < count; i++) {
-        try {
-            const joke = await getJoke();
-            jokes.push(joke);
-        } catch (err) {
-            jokes.push("⚠️ Failed to fetch joke.");
-        }
-    }
-
-    // Display jokes
-    jokeContainer.innerHTML = '';
-    jokes.forEach(joke => {
-        const div = document.createElement('div');
-        div.className = 'joke';
-        div.textContent = joke;
-        jokeContainer.appendChild(div);
+    const data = await res.json();
+    data.forEach(function (p) {
+      const tr = document.createElement('tr');
+      const tdId = document.createElement('td');
+      tdId.textContent = p.id;
+      const tdTitle = document.createElement('td');
+      tdTitle.textContent = p.title;
+      const tdPrice = document.createElement('td');
+      tdPrice.textContent = p.price;
+      const tdDesc = document.createElement('td');
+      tdDesc.textContent = p.description;
+      const tdActions = document.createElement('td');
+      const editBtn = document.createElement('button');
+      editBtn.textContent = 'Edit';
+      editBtn.addEventListener('click', function () {
+        window.open('edit.html?id=' + encodeURIComponent(p.id), 'Edit Product', 'width=420,height=620');
+      });
+      const delBtn = document.createElement('button');
+      delBtn.textContent = 'Delete';
+      delBtn.style.backgroundColor = '#8b2e2e';
+      delBtn.addEventListener('click', async function () {
+        const ok = confirm('Delete product ' + p.id + '?');
+        if (!ok) return;
+        alert("Deleted product successfully.");
+        await deleteProduct(p.id);
+        loadProducts();
+      });
+      tdActions.appendChild(editBtn);
+      tdActions.appendChild(delBtn);
+      tr.appendChild(tdId);
+      tr.appendChild(tdTitle);
+      tr.appendChild(tdPrice);
+      tr.appendChild(tdDesc);
+      tr.appendChild(tdActions);
+      tbody.appendChild(tr);
     });
-
-    // Update status
-    statusText.textContent = `${jokes.length} joke${jokes.length > 1 ? 's were' : ' was'} generated successfully ✅`;
+    status.textContent = '';
+  } catch (error) {
+    status.textContent = 'Error loading products.';
+  }
 }
 
-generateBtn.addEventListener('click', generateJokes);
+async function getProductById(id) {
+  try {
+    const res = await fetch(BASE_URL + '/' + encodeURIComponent(id));
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (e) {
+    return null;
+  }
+}
+
+async function createProduct(product) {
+  const res = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product)
+  });
+  if (!res.ok) throw new Error('create failed');
+  return await res.json();
+}
+
+async function updateProduct(id, product) {
+  const res = await fetch(BASE_URL + '/' + encodeURIComponent(id), {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product)
+  });
+  if (!res.ok) throw new Error('update failed');
+  return await res.json();
+}
+
+async function deleteProduct(id) {
+  const res = await fetch(BASE_URL + '/' + encodeURIComponent(id), {
+    method: 'DELETE'
+  });
+  return res.ok;
+}
+
+window.loadProducts = loadProducts;
+window.getProductById = getProductById;
+window.createProduct = createProduct;
+window.updateProduct = updateProduct;
+window.deleteProduct = deleteProduct;

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Банка</h1>
+</body>
+<script>
+    function bankCustomer(id, name, ticket) {
+        this.id = id;
+        this.name = name;
+        this.ticket = ticket;
+    }
+
+    function getRandomTicketNumber() {
+        return Math.floor(Math.random() * 100) + 1;
+    }
+
+    let client1 = new bankCustomer(1, 'Alice', getRandomTicketNumber());
+    let client2 = new bankCustomer(2, 'Bob', getRandomTicketNumber());
+    let clients = [client1, client2];
+    
+    console.log(client1.name[1]);
+    for (let client of clients) {
+        document.write('<ul>' +
+                       '<li>Id: ' + client.id + '</li>' +
+                       '<li>Name: ' + client.name + '</li>' +
+                       '<li>Ticket: ' + client.ticket + '</li>' +
+                       '</ul>');
+    }
+
+</script>
+</html>

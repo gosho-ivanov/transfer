@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Product Dashboard</h1>
+    </header>
+
+    <main class="container">
+
+        <div class="controls">
+            <button onclick="getProducts()">GET Products</button>
+            <a href="add.html" class="link-btn">Add Product</a>
+        </div>
+
+        <div class="results-box">
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="productBody">
+            <!-- JS will insert rows here -->
+        </tbody>
+    </table>
+</div>
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

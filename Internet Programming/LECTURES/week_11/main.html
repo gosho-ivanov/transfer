@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="number" placeholder="Enter a number">
+    <input type="text" id="square" placeholder="Enter power level" >
+    <button type="button" onclick="getSquareNumber(Number(document.getElementById('number').value), 
+                                                   Number(document.getElementById('square').value))">Get square of number</button>
+</body>
+<script>
+    let getSquareNumber = (number, powerLevel) => {
+        text = "";
+        if (powerLevel === 2) {
+            text += "Square root is: " + Math.sqrt(number) + '\n';
+        }
+        text += "Number to given power level is: " + number ** powerLevel;
+        alert(text);
+    }
+</script>
+</html>

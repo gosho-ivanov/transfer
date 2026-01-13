@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button onclick="trollFunction()">Submit</button>
+</body>
+<script>
+    function trollFunction() {
+        let Modified = "";
+        let userInput = document.querySelector('input').value;
+        let firstChar = userInput.charAt(0);
+        let lastChar = userInput.charAt(userInput.length - 1);
+        for (let i = 0; i < userInput.length; i++) {
+            if (userInput.charAt(i) === "e") {
+                Modified += 'E';
+            }
+            else {
+                Modified += userInput.charAt(i);
+            }
+        }
+        alert('First character: ' + firstChar + '\n' +
+              'Last character: ' + lastChar + '\n' +
+              'Modified input: ' + Modified);
+        
+    }
+</script>
+</html>

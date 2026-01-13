@@ -1,0 +1,183 @@
+/* ===== GLOBAL PAGE STYLE ===== */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f0ff; /* light purple background */
+    color: #2d014d;
+}
+
+header {
+    background: #6a0dad; /* strong purple */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* ===== MAIN LAYOUT ===== */
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* ===== BUTTONS ===== */
+
+button, .link-btn {
+    background: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .link-btn:hover {
+    background: #9c4dcc;
+}
+
+.center {
+    display: block;
+    text-align: center;
+    margin: 20px auto 0 auto;
+}
+
+/* ===== INPUTS & FORMS ===== */
+
+.form-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #3b005c;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 2px solid #b980d4;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    border-color: #6a0dad;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* ===== RESULT BOX ON INDEX PAGE ===== */
+
+.results-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product {
+    border-bottom: 1px solid #d6b8e8;
+    padding: 12px 0;
+}
+
+.product:last-child {
+    border-bottom: none;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4b0073;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #d6b8e8;
+    text-align: left;
+}
+
+th {
+    background: #6a0dad;
+    color: white;
+}
+
+tr:hover {
+    background: #f1e3ff;
+}
+
+
+/* ===== MESSAGES ===== */
+
+.message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #6a0dad;
+}
+
+/* ===== CONTROL BUTTONS (index page) ===== */
+
+.controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* ===== CATEGORY SELECT ===== */
+
+select.category-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 2px solid #b980d4;
+    outline: none;
+    font-size: 14px;
+    background: white;
+    color: #2d014d;
+    -webkit-appearance: none; /* Remove default arrow in some browsers */
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+select.category-select:focus {
+    border-color: #6a0dad;
+}
+
+/* Optional: add a little arrow icon for consistency */
+select.category-select::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    color: #6a0dad;
+}

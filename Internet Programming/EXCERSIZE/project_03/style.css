@@ -1,58 +1,122 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f2f2f2;
-  margin: 0;
+:root{
+  --bg:#f5f0e6;
+  --panel:#ffffff;
+  --muted:#c9c2a3;
+  --text:#2f3e2f;
+  --green:#2d5a27;
+  --button:#4e6c50;
+}
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text)
 }
 
-h1 {
-  color: #222;
+.container{
+  max-width:1100px;
+  margin:32px auto;
+  padding:20px;
+  background:transparent
 }
 
-.controls {
-  margin: 20px 0;
+h1{
+  text-align:center;
+  color:var(--green);
+  margin:0 0 16px 0
 }
 
-input {
-  width: 80px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  text-align: center;
-  font-size: 16px;
-  margin-right: 10px;
+.controls{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-bottom:12px
 }
 
-button {
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
+button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  background:var(--button);
+  color:#fff;cursor:pointer
 }
 
-button:hover {
-  background-color: #e64a19;
+button:hover{
+  opacity:.95
 }
 
-.jokes {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 700px;
-  width: 90%;
-  margin-top: 20px;
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--panel);
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+  border-radius:8px;
+  overflow:hidden
 }
 
-.joke {
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+thead th{
+  background:#e0d8c3;
+  padding:12px;
+  text-align:left;
+  border-bottom:1px solid var(--muted)
+}
+
+td,th{
+  padding:12px;
+  border-bottom:1px solid #efe8d9
+}
+
+#productTableBody tr:nth-child(odd){
+  background:#fff
+}
+
+#productTableBody tr:nth-child(even){
+  background:#fbf9f6
+}
+
+.status{
+  margin-top:12px;
+  text-align:center;
+  color:var(--text)
+}
+
+.popup{
+  max-width:380px;
+  margin:18px auto;
+  padding:18px;
+  background:var(--panel);
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06)
+}
+
+.popup h2{margin:0 0 12px 0;
+  color:var(--green)
+}
+
+label{
+  display:block;
+  margin-bottom:10px;
+  font-size:14px
+}
+
+input[type="text"],input[type="number"],textarea{
+  width:100%;padding:8px;
+  border:1px solid var(--muted);
+  border-radius:6px;
+  background:#fff;
+  color:var(--text);margin-top:6px
+}
+
+.form-actions{
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+  margin-top:12px
+}
+
+.message{
+  margin-top:10px;
+  color:#8b2e2e
 }

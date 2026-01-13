@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter an array of numbers separated by commas" id="arrayInput">
+    <input type="text" placeholder="Enter a multiplication factor" id="factorInput">
+    <button type="button" onclick="multiplyArrElements(
+        Number(document.getElementById('factorInput').value),
+        document.getElementById('arrayInput').value.trim().split(',').map(Number))">Multiply Array Elements</button>
+</body>
+<script>
+    function multiplyArrElements(factor, arr) {
+        console.log(arr.map(element => element * factor));
+    }
+</script>
+</html>

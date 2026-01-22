@@ -1,0 +1,10 @@
+{
+  "a1": {
+    "type": "STAR_DESTROYER",
+    "alliance": "Empire"
+  },
+  "a2": {
+    "type": "X_WING",
+    "alliance": "Rebels"
+  }
+}

@@ -1,0 +1,86 @@
+@startuml
+class Alliance {
+        __init__()
+}
+class Battleship {
+    alive()
+    status()
+    travel()
+    receive_damage()
+    can_attack()
+    fight()
+        name
+    alliance
+    max_shield
+    shield
+    max_hull
+    hull
+    blaster_dmg
+    speed
+    light_speed
+    hull
+    __init__()
+}
+class RebelShip {
+        __init__()
+}
+class EmpireShip {
+        __init__()
+}
+class XWing {
+    fight()
+        __init__()
+}
+class YWing {
+    fight()
+        __init__()
+}
+class AWing {
+    fight()
+        __init__()
+}
+class MillenniumFalcon {
+    fight()
+        __init__()
+}
+class TIEFighter {
+    fight()
+        __init__()
+}
+class TIEInterceptor {
+    fight()
+        __init__()
+}
+class StarDestroyer {
+    fight()
+        turbolasers
+    __init__()
+}
+class SuperStarDestroyer {
+    fight()
+        __init__()
+}
+class ShipFactory {
+    create()
+        __init__()
+}
+class Battle {
+    alive_by_alliance()
+    step()
+    run()
+        ships
+    __init__()
+}
+Enum <|-- Alliance
+ABC <|-- Battleship
+Battleship <|-- RebelShip
+Battleship <|-- EmpireShip
+RebelShip <|-- XWing
+RebelShip <|-- YWing
+RebelShip <|-- AWing
+RebelShip <|-- MillenniumFalcon
+EmpireShip <|-- TIEFighter
+EmpireShip <|-- TIEInterceptor
+EmpireShip <|-- StarDestroyer
+StarDestroyer <|-- SuperStarDestroyer
+@enduml

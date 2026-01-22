@@ -1,0 +1,7 @@
+Star Wars Battle Simulator - User Guide
+
+1. Run: python star_wars_cli.py
+2. Use menu numbers to manage ships
+3. Add at least one Rebel and one Empire ship
+4. Choose 'Battle ships' and select ships by name
+5. Data is saved automatically in fleet_state.json

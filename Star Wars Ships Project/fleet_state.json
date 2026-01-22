@@ -1,0 +1,14 @@
+{
+  "milly": {
+    "type": "MILLENNIUM_FALCON",
+    "alliance": "Rebels"
+  },
+  "a1": {
+    "type": "X_WING",
+    "alliance": "Rebels"
+  },
+  "a2": {
+    "type": "STAR_DESTROYER",
+    "alliance": "Empire"
+  }
+}

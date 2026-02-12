@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Employees</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Employee Manager</h1>
+
+    <div class="controls">
+      <button id="getBtn">Load Employees</button>
+      <button id="addBtn" class="add">Add Employee</button>
+
+    </div>
+
+    <table aria-label="Employees table">
+      <thead>
+  <tr>
+    <th data-key="employee_id">ID</th>
+    <th data-key="full_name">Full Name</th>
+    <th data-key="job_title">Job Title</th>
+    <th data-key="department">Department</th>
+    <th data-key="salary">Salary</th>
+    <th data-key="address_text">Address</th>
+    <th data-key="town">Town</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+
+
+      <tbody id="employeeTableBody"></tbody>
+    </table>
+
+    <div id="status" class="status"></div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('getBtn').addEventListener('click', () => {
+      window.loadEmployees();
+    });
+
+    document.getElementById('addBtn').addEventListener('click', () => {
+      window.open('add.html', 'Add Employee', 'width=420,height=620');
+    });
+  </script>
+</body>
+</html>

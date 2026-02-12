@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add Employee</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="popup">
+    <h2>Add Employee</h2>
+
+    <form id="addForm" novalidate>
+      <label>
+        First Name
+        <input id="first_name" type="text" />
+      </label>
+
+      <label>
+        Middle Name
+        <input id="middle_name" type="text" />
+      </label>
+
+      <label>
+        Last Name
+        <input id="last_name" type="text" />
+      </label>
+
+      <label>
+        Job Title
+        <input id="job_title" type="text" />
+      </label>
+
+      <label>
+        Department ID
+        <input id="department_id" type="number" />
+      </label>
+
+      <label>
+        Salary
+        <input id="salary" type="number" step="0.01" />
+      </label>
+
+      <label>
+        Address ID (optional)
+        <input id="address_id" type="number" />
+      </label>
+
+      <label>
+        Manager ID (optional)
+        <input id="manager_id" type="number" />
+      </label>
+
+      <div class="form-actions">
+        <button type="submit">Create</button>
+        <button id="cancel" type="button">Cancel</button>
+      </div>
+
+      <div id="message" class="message"></div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('addForm');
+    const msg = document.getElementById('message');
+
+    document.getElementById('cancel').onclick = () => window.close();
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      msg.textContent = '';
+
+      const employee = {
+  first_name: first_name.value.trim(),
+  middle_name: middle_name.value.trim() || null,
+  last_name: last_name.value.trim(),
+  job_title: job_title.value.trim(),
+  department_id: Number(department_id.value),
+  salary: Number(salary.value),
+  address_id: address_id.value ? Number(address_id.value) : null,
+  manager_id: manager_id.value ? Number(manager_id.value) : null
+};
+
+
+      if (!employee.first_name || !employee.last_name || !employee.job_title) {
+        msg.textContent = 'Required fields missing.';
+        return;
+      }
+
+      try {
+        await window.createEmployee(employee);
+        window.opener?.loadEmployees();
+        alert('Employee created successfully.');
+        window.close();
+      } catch {
+        msg.textContent = 'Failed to create employee.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,122 +1,135 @@
-:root{
-  --bg:#f5f0e6;
-  --panel:#ffffff;
-  --muted:#c9c2a3;
-  --text:#2f3e2f;
-  --green:#2d5a27;
-  --button:#4e6c50;
-}
-*{box-sizing:border-box}
-html,body{
-  height:100%;
-  margin:0;
-  font-family:Inter,system-ui,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text)
+/* ---------- GLOBAL ---------- */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.container{
-  max-width:1100px;
-  margin:32px auto;
-  padding:20px;
-  background:transparent
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #333;
 }
 
-h1{
-  text-align:center;
-  color:var(--green);
-  margin:0 0 16px 0
+/* ---------- HEADER ---------- */
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  background-color: #1f2937;
+  color: white;
 }
 
-.controls{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  margin-bottom:12px
+/* ---------- MAIN LAYOUT ---------- */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
-button{
-  padding:8px 12px;
-  border-radius:8px;
-  border:none;
-  background:var(--button);
-  color:#fff;cursor:pointer
+/* ---------- FORM ---------- */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
 }
 
-button:hover{
-  opacity:.95
+form h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
-table{
-  width:100%;
-  border-collapse:collapse;
-  background:var(--panel);
-  box-shadow:0 6px 18px rgba(0,0,0,0.04);
-  border-radius:8px;
-  overflow:hidden
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-thead th{
-  background:#e0d8c3;
-  padding:12px;
-  text-align:left;
-  border-bottom:1px solid var(--muted)
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
 }
 
-td,th{
-  padding:12px;
-  border-bottom:1px solid #efe8d9
+/* ---------- BUTTONS ---------- */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-#productTableBody tr:nth-child(odd){
-  background:#fff
+button.add {
+  background-color: #2563eb;
+  color: white;
 }
 
-#productTableBody tr:nth-child(even){
-  background:#fbf9f6
+button.add:hover {
+  background-color: #1d4ed8;
 }
 
-.status{
-  margin-top:12px;
-  text-align:center;
-  color:var(--text)
+button.edit {
+  background-color: #f59e0b;
+  color: white;
 }
 
-.popup{
-  max-width:380px;
-  margin:18px auto;
-  padding:18px;
-  background:var(--panel);
-  border-radius:10px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06)
+button.delete {
+  background-color: #ef4444;
+  color: white;
 }
 
-.popup h2{margin:0 0 12px 0;
-  color:var(--green)
+button.edit:hover {
+  background-color: #d97706;
 }
 
-label{
-  display:block;
-  margin-bottom:10px;
-  font-size:14px
+button.delete:hover {
+  background-color: #dc2626;
 }
 
-input[type="text"],input[type="number"],textarea{
-  width:100%;padding:8px;
-  border:1px solid var(--muted);
-  border-radius:6px;
-  background:#fff;
-  color:var(--text);margin-top:6px
+/* ---------- PRODUCTS LIST ---------- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.form-actions{
-  display:flex;
-  gap:8px;
-  justify-content:flex-end;
-  margin-top:12px
+/* ---------- PRODUCT CARD ---------- */
+.product {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.message{
-  margin-top:10px;
-  color:#8b2e2e
+.product h3 {
+  margin: 0 0 8px;
+}
+
+.product p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* ---------- CARD BUTTONS ---------- */
+.product .actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ---------- FOOTER TEXT (OPTIONAL) ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #666;
 }
